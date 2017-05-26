@@ -1,7 +1,6 @@
 package com.example.yebuo_admin.game.View;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +9,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.yebuo_admin.game.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class StartActivity extends AppCompatActivity {
 
     //button startujący grę
     Button startGameButton;
+
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        //anonymous authentication
+        mAuth = FirebaseAuth.getInstance();
+
+        // TODO: anonymous authentication
     }
 
     //start new game
